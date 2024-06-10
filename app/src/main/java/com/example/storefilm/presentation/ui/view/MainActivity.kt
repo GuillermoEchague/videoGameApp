@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         val usecase = VideoGameUseCase(repository)
         val viewModelFactory = ViewModelFactory(usecase)
         val viewModel =
-            ViewModelProvider(this, viewModelFactory).get(VideoGameViewModel::class.java)
+            ViewModelProvider(this, viewModelFactory)[VideoGameViewModel::class.java]
 
         viewModel.videoGamesLv.observe(this) {
             Log.i("Games", it.toString())
